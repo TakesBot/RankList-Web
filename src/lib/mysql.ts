@@ -1,13 +1,13 @@
 import mysql from 'mysql2/promise';
 
 const db = mysql.createPool({
-    host: '106.54.28.147',
-    port: 3306,
-    user: 'maimai',
-    password: 'WhtPEpnkNcBkwSWH',
-    database: 'maimai',
+    host: process.env.DB_HOST,
+    port: Number(process.env.DB_PORT) || 3306,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
     waitForConnections: true,
-    connectionLimit: 10,
+    connectionLimit: Number(process.env.DB_CONNECTION_LIMIT) || 10,
 });
 
 export default db;
