@@ -1,8 +1,17 @@
 import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
-  /* config options here */
-  reactCompiler: true,
-};
+const nextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'assets2.lxns.net',
+        port: '',
+        pathname: '/maimai/icon/**',
+      },
+    ],
+  },
+}
+
 
 export default nextConfig;
